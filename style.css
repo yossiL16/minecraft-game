@@ -9,15 +9,15 @@ body {
     width: 100vw;
 } 
 
-.container {
+#container {
     height: 80%;
     width: 100vw;
-    background-color: #69d2fc;
+    background-color: skyblue;
     height: 80%;
     display: grid;
     grid-template-columns: repeat(40, 1fr);
     grid-template-rows: repeat(24, 1fr);
-    /* gap: 1px; */
+
 }
 
 #footer {
@@ -26,10 +26,43 @@ body {
     height: 20vh;
 }
 
+.block {
+    width: 100%;
+    height:100%;
+    font-size: 3px;
+    text-align: center;
+    
+}
+
 
 .st {
     background-color: #638d2d;
     width: 100%;
     height: 100%;
-    border: 0.5px solid rgb(0, 0, 0); 
+    /* border: 0.5px solid rgb(0, 0, 0);  */
 }  
+
+.grase {
+    background-color: #638d2d;
+    width: 100%;
+    height: 100%;
+}
+
+.sky {
+    background-color: skyblue;
+    width: 100%;
+    height: 100%
+}
+
+
+.tree {
+    background-color: rgb(182, 185, 37);
+    width: 100%;
+    height: 100%
+}
+
+.stone {
+    background-color: rgb(78, 78, 73);
+    width: 100%;
+    height: 100%;
+}
