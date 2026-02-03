@@ -57,19 +57,29 @@ body {
 
 
 .tree {
-    background-color: rgb(182, 185, 37);
-    width: 100%;
-    height: 100%
+    background: url(image/tree-leaves-s.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .stone {
-    background-color: rgb(78, 78, 73);
-    width: 100%;
-    height: 100%;
+    background: url(image/rock.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .tree-trunk {
-    background-color: rgb(197, 97, 30);
-    width: 100%;
-    height: 100%;
+    background: url(image/tree.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.grass{
+    background : url('image/grass-s.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }

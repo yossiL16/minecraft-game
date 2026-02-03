@@ -40,10 +40,16 @@ for(let i=1; i<= 960 ;i++){
     }
 
     if( i > 616 && i <= 760) {
+        if (i >= 416 && i <= 656) {
+            const block = document. createElement("div");
+            block.classList.add("grass")
+            table.appendChild(block)
+        } else {
         const block = document.createElement('div');
         block.classList.add('grase');
         table.appendChild(block)
     }
+}
 
     if( i > 760) {
         const block = document.createElement('div');
