@@ -44,8 +44,9 @@ body {
 
 .grase {
     background: url(image/soil.png);
-    width: 100%;
-    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .sky {
@@ -63,6 +64,12 @@ body {
 
 .stone {
     background-color: rgb(78, 78, 73);
+    width: 100%;
+    height: 100%;
+}
+
+.tree-trunk {
+    background-color: rgb(197, 97, 30);
     width: 100%;
     height: 100%;
 }
