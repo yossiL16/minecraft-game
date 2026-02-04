@@ -46,7 +46,8 @@ function createElement(type) {
         table.appendChild(block);
 
         block.addEventListener("click", () => {
-        block.classList.remove(type);
+        // block.classList.remove(type);
+        removeElement(block, type)
         }) 
 }
 
