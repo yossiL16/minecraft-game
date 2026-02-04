@@ -1,16 +1,9 @@
-
-
-
 let table = document.getElementById("container");
-
-
 
 for(let i=1; i<= 960 ;i++){
     if(i <= 320) {
-        const block = document.createElement('div');
-        block.classList.add('sky');
-        table.appendChild(block)
-        
+
+        createElement("sky")
     }
 
     if( i > 320 && i <= 616) {
@@ -20,49 +13,40 @@ for(let i=1; i<= 960 ;i++){
             || (i >= 443 && i < 449) || i === 453 || (i >= 492 && i <= 494)
             || ( i >= 422 && i <= 427)
         ){
-        const block = document.createElement('div');
-        block.classList.add('tree');
-        table.appendChild(block)
-        } else if (i === 533 || i === 573 || i === 613 || i === 485 || i === 486 || i === 525 || i === 526
+        createElement("tree")
+        } 
+        else if (i === 533 || i === 573 || i === 613 || i === 485 || i === 486 || i === 525 || i === 526
             || i === 565 || i === 566 || i === 605 || i === 606 || 
             i === 464 || i === 465 || i === 504 || i === 505 || i === 544 || i === 545 || i === 584 || i === 585
             || i === 457 || i === 458 || i === 497 || i === 498 || i === 537 || i === 538 || i === 577 || i === 578
         ) {
-        const block = document.createElement('div');
-        block.classList.add('tree-trunk');
-        table.appendChild(block)
-        } else{
-        const block = document.createElement('div');
-        block.classList.add('sky');
-        table.appendChild(block)
+        createElement("tree-trunk")
+        } 
+        else{
+        createElement("sky")
         }
         
     }
 
     if( i > 616 && i <= 760) {
         if (i >= 416 && i <= 656) {
-            const block = document. createElement("div");
-            block.classList.add("grass")
-            table.appendChild(block)
-        } else {
-        const block = document.createElement('div');
-        block.classList.add('grase');
-        table.appendChild(block)
+            createElement("grass");
+        } 
+        else {
+        createElement("grass");
     }
 }
 
     if( i > 760) {
-        const block = document.createElement('div');
-        block.classList.add('stone');
-        table.appendChild(block)
+        createElement("stone");
     }
-    // const block = document.createElement('div');
-    
-    // block.innerHTML=  `${i}`
-    // block.classList.add('block');
-    // table.appendChild(block)
 }
 
-const click = addEventListener("click", ()=> {
-    
-})
+function createElement(type) {
+        const block = document.createElement('div');
+        block.classList.add(type);
+        table.appendChild(block);
+        block.addEventListener("click", () => {
+            block.classList.remove(type);
+        })
+}
