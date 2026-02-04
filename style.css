@@ -7,13 +7,12 @@
 body { 
     height: 100vh;
     width: 100vw;
-} 
+}  
 
 #container {
     height: 80%;
     width: 100vw;
     background-color: skyblue;
-    height: 80%;
     display: grid;
     grid-template-columns: repeat(40, 1fr);
     grid-template-rows: repeat(24, 1fr);
@@ -24,6 +23,10 @@ body {
     background-color: grey;
     width: 100vw;
     height: 20vh;
+    display: flex;
+        align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
 .block {
@@ -39,7 +42,6 @@ body {
     background-color: #638d2d;
     width: 100%;
     height: 100%;
-    /* border: 0.5px solid rgb(0, 0, 0);  */
 }  
 
 .grase {
@@ -83,3 +85,21 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+.icon {
+    height: 1em;
+}
+
+.bg-icon {
+    height: 40%;
+    width: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkgrey;
+    border-radius: 10%;
+}
+img.icon-box {
+    height: 1.8em;
+}
+
