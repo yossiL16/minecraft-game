@@ -1,5 +1,14 @@
 let table = document.getElementById("container");
 
+let count = {
+    "grass" : 0,
+    "tree" : 0,
+    "tree-trunk" : 0,
+    "stone" : 0
+}
+
+let cursor = ""
+
 for(let i=1; i<= 960 ;i++){
     if(i <= 320) { createElement("sky") }
 
@@ -24,7 +33,7 @@ for(let i=1; i<= 960 ;i++){
     if( i > 616 && i <= 760) {
 
         if (i >= 416 && i <= 656) { createElement("grass"); } 
-        else { createElement("grass"); }
+        else { createElement("grase"); }
         }
 
     if( i > 760) { createElement("stone"); }
@@ -35,7 +44,47 @@ function createElement(type) {
         const block = document.createElement('div');
         block.classList.add(type);
         table.appendChild(block);
+
         block.addEventListener("click", () => {
-            block.classList.remove(type);
-        })
+        block.classList.remove(type);
+        }) 
+}
+
+
+function resetGame(){
+    const button = document.querySelector(".div-reset");
+    button.addEventListener("click", ()=> {
+    })
+}
+
+function removeElement(element, type){
+    if (cursor === "ax" && (element.classList[0] === "tree" || element.classList[0] === "tree-trunk")){
+        element.classList.remove(type)
+    }
+    if (cursor === "shovel" && (element.classList[0] === "grass" || element.classList[0] === "grase")) {
+        element.classList.remove(type)
+    }
+    if (cursor === "mining" && element.classList[0] === "stone") {
+        element.classList.remove(type)
+    }
+}
+
+
+function changeCursor(tool){
+    if(tool.classList[0] === "ax") {
+        cursor = "ax";
+        document.body.style.cursor = "url('image/ax.ico'), auto"    
+    }
+    if (tool.classList[0] === "shovel") {
+        cursor = "shovel";
+        document.body.style.cursor = "url('image/shovel.ico'),auto"
+    }
+    if (tool.classList[0] === "mining") {
+    cursor = "mining";
+    document.body.style.cursor = "url('image/pickaxe.ico'),auto"
+    }
+    if (tool.classList[0] === "sword") {
+    cursor = "sword";
+    document.body.style.cursor = "url('image/sword.ico'),auto"
+    }
 }

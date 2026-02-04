@@ -19,8 +19,6 @@ body {
 
 }
 
-
-
 .block {
     width: 100%;
     height:100%;
@@ -143,13 +141,17 @@ color:white
     justify-content: right;
     align-items: center;
     margin-right: 10%;
+    text-decoration: none;
+    
 
 }
 
-.reset-text {
+p.reset-text {
     color: white;
     font-size: 7px;
-    text-align: center;
+    /* text-align: center; */
+    position: relative;
+    bottom:37% ;
     
 }
 
@@ -160,6 +162,7 @@ color:white
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    border: dimgrey solid 1px;
 }
 
 .div-reset:hover {
