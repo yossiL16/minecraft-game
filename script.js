@@ -51,7 +51,7 @@ function createElement(type) {
         table.appendChild(block);
 
         block.addEventListener("click", () => {
-        removeElement(block)
+        handleBlockClick(block)
         }) 
 }
 

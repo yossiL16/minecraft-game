@@ -127,11 +127,13 @@ img.icon-box {
     justify-content: center;
     align-items: center;
     border-radius:4px ;
+    margin-right: 10px;
 }
 
 .contai-text  p {
 font-size: 5PX;
-color:white
+color:white;
+
 
 }
 
@@ -174,18 +176,21 @@ p.reset-text {
     gap: 2px;
     background-color: #333;
     min-width: 60px;
-    padding: 5px;
+    height: 30px;
+    padding: 2px;
     border: 2px inset #555;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+    padding-bottom: 4px;
 }
 
 .inventory-item {
-    width: 30px;
-    height: 30px;
+    width:25%;
+    height: 50%;
     border: 1px solid white;
     position: relative;
     cursor: pointer;
     background-size: cover;
+    
 }
 
 .inventory-item span {
@@ -194,11 +199,16 @@ p.reset-text {
     right: 0;
     background: rgba(0,0,0,0.7);
     color: white;
-    font-size: 10px;
+    font-size: 4px;
     padding: 1px;
 }
 
 
 .inventory-item:active {
     outline: 2px solid yellow;
+}
+
+img.icon-box {
+    position: relative;
+    bottom:3px ;
 }
