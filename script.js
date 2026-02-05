@@ -1,13 +1,17 @@
 let table = document.getElementById("container");
 
+const boxDisplay = document.querySelector(".box");
+
 let count = {
     "grass" : 0,
+    "grase": 0,
     "tree" : 0,
     "tree-trunk" : 0,
     "stone" : 0
 }
 
-let cursor = ""
+let cursor = "";
+selectedBlockFromInventory = null;
 
 for(let i=1; i<= 960 ;i++){
     if(i <= 320) { createElement("sky") }
@@ -42,11 +46,12 @@ for(let i=1; i<= 960 ;i++){
 
 function createElement(type) {
         const block = document.createElement('div');
+        block.classList.add("block")
         block.classList.add(type);
         table.appendChild(block);
 
         block.addEventListener("click", () => {
-        removeElement(block, type)
+        removeElement(block)
         }) 
 }
 
@@ -57,17 +62,56 @@ function resetGame(){
     })
 }
 
-function removeElement(element, type){
-    if (cursor === "ax" && (element.classList[0] === "tree" || element.classList[0] === "tree-trunk")){
-        element.classList.remove(type)
-    }
-    if (cursor === "shovel" && (element.classList[0] === "grass" || element.classList[0] === "grase")) {
-        element.classList.remove(type)
-    }
-    if (cursor === "mining" && element.classList[0] === "stone") {
-        element.classList.remove(type)
+
+function handleBlockClick(block){
+    const currentType = block.classList[1]
+    if (cursor !== "inventory") {
+        if (
+            (cursor === "ax" && (currentType === "tree" || currentType === "tree-trunk")) ||
+            (cursor === "shovel" && (currentType === "grass" || currentType === "grase")) ||
+            (cursor === "mining" && currentType === "stone")
+        ) {
+            count[currentType]++;
+            block.classList.remove(currentType);
+            block.classList.add("sky")
+            updateInventoryUI()
+        }
+    } 
+    else if (cursor === "inventory" &&
+         selectedBlockFromInventory &&
+          currentType === "sky") {
+            if (count[selectedBlockFromInventory] > 0) {
+                block.classList.remove("sky")
+                block.classList.add(selectedBlockFromInventory)
+                count[selectedBlockFromInventory]--
+                updateInventoryUI()
+            }
     }
 }
+
+
+
+function updateInventoryUI() {
+    boxDisplay.innerHTML = ""
+    for(let item in count) {
+        const itemDiv = document.createElement("div")
+        itemDiv.className = `inventory-item ${item}`
+        itemDiv.innerHTML = `<span>${count[item]}</span>`
+        itemDiv.onclick = (e) => {
+            e.stopPropagation()
+            selectItemFromInventory(item);
+        }
+        boxDisplay.appendChild(itemDiv)
+    }
+}
+
+
+function selectItemFromInventory(item) {
+    cursor = "inventory"
+    selectedBlockFromInventory = item
+    document.body.style.cursor = "pointer"
+}
+
 
 
 function changeCursor(tool){

@@ -149,7 +149,6 @@ color:white
 p.reset-text {
     color: white;
     font-size: 7px;
-    /* text-align: center; */
     position: relative;
     bottom:37% ;
     
@@ -167,4 +166,39 @@ p.reset-text {
 
 .div-reset:hover {
     background-color: aqua;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+    background-color: #333;
+    min-width: 60px;
+    padding: 5px;
+    border: 2px inset #555;
+    overflow-y: auto;
+}
+
+.inventory-item {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    position: relative;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.inventory-item span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 10px;
+    padding: 1px;
+}
+
+
+.inventory-item:active {
+    outline: 2px solid yellow;
 }
