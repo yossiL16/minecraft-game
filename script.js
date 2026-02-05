@@ -11,7 +11,7 @@ let count = {
 }
 
 let cursor = "";
-selectedBlockFromInventory = null;
+let selectedBlockFromInventory = null;
 
 for(let i=1; i<= 960 ;i++){
     if(i <= 320) { createElement("sky") }
